@@ -80,16 +80,13 @@ After Prressing on Browse Opportunities or Press Explore all avalibal  Opportuni
 
 ## ✅ Project Rubric Mapping (13 Elements)
 
-### 1️⃣ HTML Structure
+### 1️ HTML Structure
 We used valid, semantic HTML5 elements inside React (e.g., `<header>`, `<nav>`, `<section>`, `<form>`, `<footer>`) ensuring a logical document flow and good accessibility.
 
-### 2️⃣ CSS Styling
-The project applies external CSS with a consistent color palette, gradients, rounded corners, and modern UI design, using both flexbox and grid for layout and responsive behavior.
+### 2 CSS Styling
+The project applies external CSS with a consistent color palette, gradients, rounded corners, and modern UI design, using both flexbox(header, nav ul) and grid(opportunities-list...) for layout and responsive behavior. Further more, Media queries ensure the site adapts well to mobile, tablet, and desktop screen sizes, maintaining a usable and visually appealing interface across devices.
 
-### 3️⃣ Responsive Design
-Media queries ensure the site adapts well to mobile, tablet, and desktop screen sizes, maintaining a usable and visually appealing interface across devices.
-
-### 4️⃣ JavaScript Functionality
+###  JavaScript Functionality
 We implemented interactive features using JavaScript and React, such as form submission handling, conditional rendering, and dynamic updates based on user actions.
 
 ### 5️⃣ React Components
