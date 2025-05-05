@@ -3,29 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <title>Volunteer Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="root">
-    <!-- You would insert content manually here or with JS -->
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Example content, replace per page -->
     <h1>Welcome to Volunteer Hub</h1>
-    <p>This is a placeholder for the App content.</p>
-  </div>
+    <p>This is the Home page content.</p>
+  </main>
 
-  <!-- Example: Google Sign-In Button using plain JavaScript -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <div id="g_id_onload"
-       data-client_id="341977713980-025p3joajpufn5jupnljorv8gtsimqa0.apps.googleusercontent.com"
-       data-callback="handleCredentialResponse">
-  </div>
-  <div class="g_id_signin" data-type="standard"></div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Volunteer Hub</p>
+  </footer>
 
-  <script>
-    function handleCredentialResponse(response) {
-      console.log("Encoded JWT ID token: " + response.credential);
-      // Save to localStorage or send to your backend
-    }
-  </script>
 </body>
 </html>
