@@ -18,10 +18,10 @@ function Footer() {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json()) // التأكد من تحويل الاستجابة إلى JSON
+      .then((response) => response.json())
       .then((data) => {
-        alert(data.message); // عرض الرسالة
-        handleModalToggle(); // إغلاق النافذة
+        alert(data.message);
+        handleModalToggle();
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -32,11 +32,19 @@ function Footer() {
     <footer className="footer">
       <div className="container">
         <p>&copy; 2023 Volunteer Hub. All rights reserved.</p>
+
         <div className="social-links">
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
+          <a href="#" aria-label="Twitter">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i className="fab fa-linkedin"></i>
+          </a>
         </div>
+
         <div className="contact-us">
           <button onClick={handleModalToggle} className="contact-us-button">
             Contact Us
