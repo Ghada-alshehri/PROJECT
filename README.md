@@ -57,9 +57,37 @@ We also integrated an **external API** to display the latest volunteering news, 
 <img width="948" alt="image" src="https://github.com/user-attachments/assets/003e5b32-3d4c-44ef-9578-89cbbdb434cc" />
 
 
-
 2- Expolre Opertinituse Page
-After Pressing on Browse Opportunities, all available Opportunities are displyed.
+After pressing **Browse Opportunities**, the user can view **all available opportunities**.
+We displayed real opportunities using styled cards, that contains some information about the Opportunitie such as title, Location, Duration, Skills Needed. Then pressing **View Details** or  **Search** or **Filter** for further search or contenu.
+
+3- Selected volunteering opportunity
+This page shows the details of a selected volunteering opportunity. It includes:
+- The title of the opportunity.
+- A description section explaining what the volunteer will do.
+- A list of gained skills (like report writing, data analysis, documentation).
+- Requirements (like needed knowledge or abilities).
+- key info such as location, duration, and payment.
+-  “Volunteer Now” button for users to sign up.
+ At the bottom, there’s an interactive map showing the exact location, helping users understand where they need to go.
+
+4- Volunteer Application Form
+This page shows Form where users can apply for a selected opportunity. It includes:
+- Fields for full name, email, and phone.
+- A section listing available time slots for the volunteer to pick.
+- A text area to enter relevant skills.
+- Two clear buttons at the bottom: Cancel and Submit Application, making the form easy to complete or exit.
+This form ensures we collect key applicant details and lets volunteers easily sign up for roles.
+
+5- Profile Page
+This page shows the user’s profile with:
+- Personal info (name, email, university).
+- An Edit Profile button to update details.
+- A Sign Out button.
+- Community Statistics showing completion rate, tasks completed, ongoing tasks, and hours volunteered.
+- A list of current volunteer activities with status and dates.
+This helps users track their progress and manage their volunteer work easily.
+
 
 
 
@@ -89,10 +117,10 @@ We used state management (with useState) to track and update dynamic data like u
 ### 8 Routing and Navigation
 We implemented routing using React Router to smoothly navigate between pages like Home, Explore, Profile, and Login without reloading the whole app.
 
-### 9 API Integration 
+### 9 API Integration (if applicable)
  We integrated external APIs (via `fetch` or `axios`) to have smooth login & signup, Interactive Map, and News.
 
-### 10 Accessibility 
+### 10 Accessibility (A11y)
 We ensured accessibility by using descriptive `alt` text, proper heading levels, sufficient color contrast, keyboard-friendly navigation, and semantic roles where appropriate.
 
 ### 11 Deployment
