@@ -9,6 +9,19 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+/* useState:
+ use local state variables:
+- email → to store the user’s typed email
+- password → to store the user’s typed password
+- error → to show error messages when login fails
+We update these states when the user types into the form or when we want to display feedback.
+Props:
+we do not receive props directly, but it uses child components like: 
+<GoogleLogin /> → we pass it an onSuccess function (handleGoogleLogin)
+<form> and its elements → they pass values up through onChange events to update local state
+*/
+  
   // Handles manual login form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
