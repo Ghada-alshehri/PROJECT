@@ -129,7 +129,7 @@ The project is deployed on GitHub Repo.
 ## Extra
 
 ### PHP
-We used PHP to store the users’ submitted questions in a file called Contact Us, allowing us to save and manage user inquiries effectively from the frontend form.
+We used PHP to store the users’ submitted questions in a file called ***submit_contact.php***, allowing us to save and manage user inquiries effectively from the frontend form.
 
 ### Database
 We used a database to store and manage user data, including login details, submitted forms, and volunteering opportunities, making the website dynamic and up-to-date.
