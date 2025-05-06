@@ -42,6 +42,16 @@ function Explore() {
   const [filterSkill, setFilterSkill] = useState("");
   const [filterPayment, setFilterPayment] = useState("");
   const [showFilterMenu, setShowFilterMenu] = useState(false);
+  useState:
+- searchTerm: the current search input.
+- selectedOpportunity: the opportunity the user clicked on.
+- showVolunteerForm: whether the volunteer form modal is open.
+- formSuccess: whether the form was successfully submitted.
+- opportunities: the list of opportunities fetched from the database.
+- formData: the user’s form inputs (like name, email, phone, skills).
+- filterType, filterSkill, filterPayment: the selected filter options.
+- showFilterMenu: whether the filter sidebar is visible.
+  */
   
     // Fetches all opportunities from Firestore when the component mounts
   useEffect(() => {
