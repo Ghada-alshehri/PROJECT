@@ -10,8 +10,14 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-
+  const navigate = useNavigate(); 
+/*
+useState:
+ -to manage the entered name, email, and password
+ -the error message shown when fields are missing or signup fails
+Props--> None
+*/
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
   
