@@ -22,6 +22,8 @@ function Profile() {
 - profileImage → to store the uploaded profile image file
 - opportunities → to store the list of volunteer applications the user has
 These states are updated through user interactions (like editing fields) or when data is fetched from the database.
+props--> None
+
 */
   
   const userEmail = localStorage.getItem("googleEmail");
