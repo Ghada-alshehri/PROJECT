@@ -15,7 +15,7 @@ import {
   getDoc,
 } from "firebase/firestore";
 
-// إصلاح الأيقونات الخاصة بـ Leaflet
+// Fix for Leaflet's default icon path when using Webpack or Create React App
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -24,6 +24,7 @@ L.Icon.Default.mergeOptions({
 });
 
 function Explore() {
+    // Main component to display, filter, and apply to volunteer opportunities
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedOpportunity, setSelectedOpportunity] = useState(null);
   const [showVolunteerForm, setShowVolunteerForm] = useState(false);
@@ -41,7 +42,8 @@ function Explore() {
   const [filterSkill, setFilterSkill] = useState("");
   const [filterPayment, setFilterPayment] = useState("");
   const [showFilterMenu, setShowFilterMenu] = useState(false);
-
+  
+    // Fetches all opportunities from Firestore when the component mounts
   useEffect(() => {
     const fetchOpportunities = async () => {
       const querySnapshot = await getDocs(collection(db, "opportunities"));
@@ -61,13 +63,15 @@ function Explore() {
     const matchesPayment = filterPayment ? opp.payment?.toLowerCase().includes(filterPayment.toLowerCase()) : true;
     return matchesTitle && matchesType && matchesSkill && matchesPayment;
   });
-
+  
+    // Opens the modal to view opportunity details
   const handleViewDetails = (opportunity) => {
     setSelectedOpportunity(opportunity);
     setShowVolunteerForm(false);
     setFormSuccess(false);
   };
-
+  
+    // Closes modals and resets form and state
   const closeModal = () => {
     setSelectedOpportunity(null);
     setShowVolunteerForm(false);
@@ -80,7 +84,8 @@ function Explore() {
       skills: "",
     });
   };
-
+  
+    // Loads user info from Firestore and opens the volunteer form
   const openVolunteerForm = async () => {
     setFormSuccess(false);
     const userEmail = localStorage.getItem("googleEmail");
@@ -113,7 +118,8 @@ function Explore() {
       alert("Failed to load your info. Try again.");
     }
   };
-
+  
+    // Updates form input fields when user types or selects
   const handleFormChange = (e) => {
     const { name, value, type, selectedOptions } = e.target;
     if (type === "select-multiple") {
@@ -123,7 +129,8 @@ function Explore() {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
-
+  
+    // Validates and submits the volunteer application to Firestore
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const userEmail = localStorage.getItem("googleEmail");
@@ -159,7 +166,8 @@ function Explore() {
       alert("Failed to submit. Please try again.");
     }
   };
-
+  
+    // Displays Leaflet map when an opportunity with valid coordinates is selected
   useEffect(() => {
     if (
       selectedOpportunity &&
