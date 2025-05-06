@@ -3,6 +3,7 @@ import "../App.css";
 
 // SidebarFilter component to allow users to filter volunteering opportunities
 const SidebarFilter = ({
+  // Props used:
   filterType,         // selected duration filter (e.g., "1 day")
   setFilterType,      // function to update duration filter
   filterSkill,        // selected skill filter
@@ -11,6 +12,7 @@ const SidebarFilter = ({
   setFilterPayment,   // function to update payment filter
   onReset,            // function to reset all filters
   onClose             // function to close the sidebar
+  // State--> None
 }) => {
   return (
     // Overlay to cover screen (clicking on it will close the filter panel)
