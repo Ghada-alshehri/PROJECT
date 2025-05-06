@@ -15,6 +15,7 @@ function Navbar() {
 - isLoggedIn: tracks if a user is logged in.
 - userName: holds the logged-in user’s name.
 - photoURL: stores the user’s profile picture URL.
+Props--> None
 */
   
   const location = useLocation(); // to detect route changes
