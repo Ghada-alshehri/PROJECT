@@ -2,6 +2,14 @@ import React from "react";
 
 // Component to display a single volunteering opportunity card
 function OpportunityCard({ opportunity, onViewDetails }) {
+
+/* 
+Props:
+- opportunity: passed from the parent component; contains the data to display (title, description, location, duration, payment, skills).
+- onViewDetails: a callback function passed from the parent, called when the user clicks the View Details button.
+State--> None
+*/
+  
   return (
     <div className="volunteer-card">
       <div className="card-content">
