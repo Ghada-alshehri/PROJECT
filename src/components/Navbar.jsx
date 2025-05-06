@@ -10,7 +10,13 @@ function Navbar() {
   // Store user's name and profile picture
   const [userName, setUserName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
-
+/*
+ useState: 
+- isLoggedIn: tracks if a user is logged in.
+- userName: holds the logged-in user’s name.
+- photoURL: stores the user’s profile picture URL.
+*/
+  
   const location = useLocation(); // to detect route changes
   const navigate = useNavigate(); // to programmatically navigate
 
