@@ -9,6 +9,7 @@ function NewsSection() {
 State manage:
 - articles: stores the fetched list of news articles.
 - loading: tracks whether the data is still loading.
+Props--> None
   */
   
   // This runs once when the component mounts
