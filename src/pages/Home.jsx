@@ -1,17 +1,22 @@
+// Import required modules and components
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import NewsSection from "../components/NewsSection";
 
 function Home() {
+  // Hook to programmatically navigate between routes
   const navigate = useNavigate();
 
+  // Handler for "Browse Opportunities" button click
   const handleBrowseClick = () => {
     navigate("/explore");
   };
 
   return (
     <section id="home" className="section active">
+      {/* Banner section */}
       <section className="banner-wrapper"></section>
+      {/* Hero section with main heading and call-to-action */}
       <div className="hero">
         <div style={{ position: "relative", zIndex: 1 }}>
           <h2>Find Your Perfect Volunteer Opportunity</h2>
@@ -22,7 +27,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Features */}
+      {/* Features section highlighting key benefits */}
       <div className="features">
         <div className="feature-card">
           <i className="fas fa-calendar-alt"></i>
@@ -41,7 +46,7 @@ function Home() {
         </div>
       </div>
 
-      {/* News Section */}
+      {/* Latest news or updates related to volunteering */}
       <NewsSection />
     </section>
   );
