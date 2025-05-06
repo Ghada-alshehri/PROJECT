@@ -42,6 +42,8 @@ function Explore() {
   const [filterSkill, setFilterSkill] = useState("");
   const [filterPayment, setFilterPayment] = useState("");
   const [showFilterMenu, setShowFilterMenu] = useState(false);
+  
+  /*
   useState:
 - searchTerm: the current search input.
 - selectedOpportunity: the opportunity the user clicked on.
