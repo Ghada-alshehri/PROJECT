@@ -1,37 +1,45 @@
 import React, { useEffect, useState } from "react";
 
+// This component shows latest news from UN Volunteers RSS feed
 function NewsSection() {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [articles, setArticles] = useState([]); // store fetched articles
+  const [loading, setLoading] = useState(true); // loading state
 
+  // This runs once when the component mounts
   useEffect(() => {
+    // Fetch RSS data from the API
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.unv.org/rss.xml")
       .then((res) => res.json())
       .then((data) => {
-        setArticles(data.items.slice(0, 5));
-        setLoading(false);
+        setArticles(data.items.slice(0, 5)); // take first 5 articles only
+        setLoading(false); // stop loading after data fetched
       })
       .catch((error) => {
-        console.error("Error fetching RSS feed:", error);
+        console.error("Error fetching RSS feed:", error); // show error if request fails
         setLoading(false);
       });
   }, []);
 
   return (
     <section style={{ padding: "2rem" }}>
+      {/* Section heading */}
       <h2 style={{ textAlign: "center" }}>Global Volunteering Updates</h2>
+
+      {/* Show loading message if data is not yet loaded */}
       {loading ? (
         <p style={{ textAlign: "center" }}>Loading...</p>
       ) : (
+        // Horizontal scroll container
         <div
           style={{
             display: "flex",
             overflowX: "auto",
             gap: "1rem",
             paddingTop: "1rem",
-            scrollSnapType: "x mandatory",
+            scrollSnapType: "x mandatory", // for smooth horizontal scrolling
           }}
         >
+          {/* Loop through each article */}
           {articles.map((article, index) => (
             <div
               key={index}
@@ -45,6 +53,7 @@ function NewsSection() {
                 flexShrink: 0,
               }}
             >
+              {/* Show image if article has thumbnail */}
               {article.thumbnail && (
                 <img
                   src={article.thumbnail}
@@ -58,19 +67,25 @@ function NewsSection() {
                   }}
                 />
               )}
+
+              {/* Show article title */}
               <h4 style={{ fontSize: "16px", marginBottom: "0.5rem" }}>
                 {article.title}
               </h4>
-<p style={{ fontSize: "14px", color: "#555" }}>
-  {article.description?.replace(/<[^>]+>/g, "").slice(0, 100)}...
-</p>
 
+              {/* Show short description without HTML tags */}
+              <p style={{ fontSize: "14px", color: "#555" }}>
+                {article.description?.replace(/<[^>]+>/g, "").slice(0, 100)}...
+              </p>
+
+              {/* Article link (can add "Read More" text here if needed) */}
               <a
                 href={article.link}
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: "#007BFF", fontSize: "14px" }}
               >
+                {/* You can write "Read more" inside this tag if needed */}
               </a>
             </div>
           ))}

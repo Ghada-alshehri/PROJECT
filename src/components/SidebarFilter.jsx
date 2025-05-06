@@ -1,21 +1,26 @@
-import React from "react";
+import React from "react"; 
 import "../App.css";
 
+// SidebarFilter component to allow users to filter volunteering opportunities
 const SidebarFilter = ({
-  filterType,
-  setFilterType,
-  filterSkill,
-  setFilterSkill,
-  filterPayment,
-  setFilterPayment,
-  onReset,
-  onClose
+  filterType,         // selected duration filter (e.g., "1 day")
+  setFilterType,      // function to update duration filter
+  filterSkill,        // selected skill filter
+  setFilterSkill,     // function to update skill filter
+  filterPayment,      // selected payment filter
+  setFilterPayment,   // function to update payment filter
+  onReset,            // function to reset all filters
+  onClose             // function to close the sidebar
 }) => {
   return (
+    // Overlay to cover screen (clicking on it will close the filter panel)
     <div className="filter-overlay" onClick={onClose}>
+      
+      {/* Filter panel itself (clicking inside won't close the panel) */}
       <div className="filter-panel" onClick={(e) => e.stopPropagation()}>
         <h3>Filter Opportunities</h3>
 
+        {/* Duration filter section */}
         <div className="filter-group">
           <label>Duration:</label>
           <div>
@@ -48,6 +53,7 @@ const SidebarFilter = ({
           </div>
         </div>
 
+        {/* Skills dropdown filter */}
         <div className="filter-group">
           <label>Skills:</label>
           <select
@@ -65,6 +71,7 @@ const SidebarFilter = ({
           </select>
         </div>
 
+        {/* Payment filter section */}
         <div className="filter-group">
           <label>Payment:</label>
           <div>
@@ -88,6 +95,7 @@ const SidebarFilter = ({
           </div>
         </div>
 
+        {/* Button to reset all filters */}
         <button className="reset-button" onClick={onReset}>Reset Filters</button>
       </div>
     </div>
