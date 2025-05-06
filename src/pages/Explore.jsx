@@ -42,20 +42,7 @@ function Explore() {
   const [filterSkill, setFilterSkill] = useState("");
   const [filterPayment, setFilterPayment] = useState("");
   const [showFilterMenu, setShowFilterMenu] = useState(false);
-  
-  /*
-  useState:
-- searchTerm: the current search input.
-- selectedOpportunity: the opportunity the user clicked on.
-- showVolunteerForm: whether the volunteer form modal is open.
-- formSuccess: whether the form was successfully submitted.
-- opportunities: the list of opportunities fetched from the database.
-- formData: the user’s form inputs (like name, email, phone, skills).
-- filterType, filterSkill, filterPayment: the selected filter options.
-- showFilterMenu: whether the filter sidebar is visible.
-  */
-  
-    // Fetches all opportunities from Firestore when the component mounts
+
   useEffect(() => {
     const fetchOpportunities = async () => {
       const querySnapshot = await getDocs(collection(db, "opportunities"));
@@ -75,15 +62,13 @@ function Explore() {
     const matchesPayment = filterPayment ? opp.payment?.toLowerCase().includes(filterPayment.toLowerCase()) : true;
     return matchesTitle && matchesType && matchesSkill && matchesPayment;
   });
-  
-    // Opens the modal to view opportunity details
+
   const handleViewDetails = (opportunity) => {
     setSelectedOpportunity(opportunity);
     setShowVolunteerForm(false);
     setFormSuccess(false);
   };
-  
-    // Closes modals and resets form and state
+
   const closeModal = () => {
     setSelectedOpportunity(null);
     setShowVolunteerForm(false);
@@ -96,8 +81,7 @@ function Explore() {
       skills: "",
     });
   };
-  
-    // Loads user info from Firestore and opens the volunteer form
+
   const openVolunteerForm = async () => {
     setFormSuccess(false);
     const userEmail = localStorage.getItem("googleEmail");
@@ -130,8 +114,7 @@ function Explore() {
       alert("Failed to load your info. Try again.");
     }
   };
-  
-    // Updates form input fields when user types or selects
+
   const handleFormChange = (e) => {
     const { name, value, type, selectedOptions } = e.target;
     if (type === "select-multiple") {
@@ -141,8 +124,7 @@ function Explore() {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
-  
-    // Validates and submits the volunteer application to Firestore
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const userEmail = localStorage.getItem("googleEmail");
@@ -150,14 +132,12 @@ function Explore() {
       alert("Please log in first.");
       return;
     }
-  
-    // Check 
+
     const phoneRegex = /^05\d{8}$/;
     if (!phoneRegex.test(formData.phone)) {
       alert("رقم الجوال يجب أن يبدأ بـ 05 ويتكوّن من 10 أرقام فقط.");
       return;
     }
-  
 
     try {
       const userAppsRef = collection(db, "users", userEmail, "applications");
@@ -178,8 +158,8 @@ function Explore() {
       alert("Failed to submit. Please try again.");
     }
   };
-  
-    // Displays Leaflet map when an opportunity with valid coordinates is selected
+
+  // ----------Displays Leaflet map when an opportunity with valid coordinates is selected (API)--------------
   useEffect(() => {
     if (
       selectedOpportunity &&
@@ -188,19 +168,23 @@ function Explore() {
       typeof selectedOpportunity.coordinates.longitude === "number"
     ) {
       setTimeout(() => {
+        // Initialize Leaflet map with the given coordinates
         const map = L.map("opportunity-map").setView(
           [selectedOpportunity.coordinates.latitude, selectedOpportunity.coordinates.longitude],
           15
         );
+        // Load map tiles from OpenStreetMap servers
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution: "© OpenStreetMap contributors",
         }).addTo(map);
+        // Add a marker on the opportunity's location with popup title
         L.marker([
           selectedOpportunity.coordinates.latitude,
           selectedOpportunity.coordinates.longitude,
         ])
           .addTo(map)
           .bindPopup("📍 " + selectedOpportunity.title);
+        // Fix map layout inside modals
         map.invalidateSize();
       }, 200);
     }
@@ -226,7 +210,6 @@ function Explore() {
           <button className="search-button">Search</button>
         </div>
 
-        {/* ✅ فلتر جانبي جاهز */}
         {showFilterMenu && (
           <SidebarFilter
             filterType={filterType}
