@@ -54,6 +54,7 @@ On the **Homepage**, we showcased the **key features of our volunteering platfor
 We also integrated an **external API** to display the latest volunteering news, aiming to **encourage users to register and engage** by browsing relevant and inspiring content.
 
 <img width="948" alt="image" src="https://github.com/user-attachments/assets/003e5b32-3d4c-44ef-9578-89cbbdb434cc" />
+
 ![image](https://github.com/user-attachments/assets/5f831074-8b6b-4074-a3d6-f957c36ae53a)
 
 
