@@ -4,20 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { db } from "../firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-
+  // Login component that allows users to sign in manually or using Google
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  // Handles manual login form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+        // Basic validation for input fields
     if (!email || !password) {
       setError("Please fill in both email and password!");
       return;
     }
 
     try {
+            // Get user data from Firestore using email as document ID
       const userRef = doc(db, "users", email);
       const docSnap = await getDoc(userRef);
 
@@ -27,14 +29,13 @@ function Login() {
       }
 
       const userData = docSnap.data();
-
+      // Check credentials match for manual login
       if (userData.method === "manual" && userData.password === password) {
-        // ✅ حفظ البيانات في localStorage
         localStorage.setItem("manualEmail", userData.email);
         localStorage.setItem("googleName", userData.name);
         localStorage.setItem("googleEmail", userData.email);
 
-        // ✅ إعادة تحميل الصفحة لتحديث النافبار
+        // Redirect to profile page
         window.location.href = "/profile";
       } else {
         setError("Invalid email or password.");
@@ -44,9 +45,10 @@ function Login() {
       setError("Something went wrong. Please try again.");
     }
   };
+    // Handles Google OAuth login and creates user record in Firestore if not exists
 
   const handleGoogleLogin = async (credentialResponse) => {
-    try {
+    try {      // Save JWT token and decode user info
       localStorage.setItem("google_token", credentialResponse.credential);
       const decoded = jwtDecode(credentialResponse.credential);
       localStorage.setItem("googleName", decoded.name);
@@ -54,7 +56,7 @@ function Login() {
 
       const userRef = doc(db, "users", decoded.email);
       const docSnap = await getDoc(userRef);
-
+      // If user doesn't exist, create new Firestore document
       if (!docSnap.exists()) {
         await setDoc(userRef, {
           name: decoded.name,
@@ -66,13 +68,13 @@ function Login() {
         });
       }
 
-      // ✅ إعادة توجيه
+      // Redirect to profile after login
       window.location.href = "/profile";
     } catch (err) {
       console.error("Google Login Error:", err);
     }
   };
-
+  // Render login form with Google login button and manual email/password form
   return (
     <section id="login" className="section active">
       <div className="login-container">
