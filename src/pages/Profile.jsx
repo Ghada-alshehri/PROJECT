@@ -15,6 +15,14 @@ function Profile() {
   const [opportunities, setOpportunities] = useState([]);
   
   const navigate = useNavigate();
+
+/* useState: 
+- editing → to check if the user is currently editing their profile
+- profileData → to store the user’s profile info (name, email, university, photo)
+- profileImage → to store the uploaded profile image file
+- opportunities → to store the list of volunteer applications the user has
+These states are updated through user interactions (like editing fields) or when data is fetched from the database.
+*/
   
   const userEmail = localStorage.getItem("googleEmail");
   
