@@ -5,6 +5,12 @@ function NewsSection() {
   const [articles, setArticles] = useState([]); // store fetched articles
   const [loading, setLoading] = useState(true); // loading state
 
+  /*
+State manage:
+- articles: stores the fetched list of news articles.
+- loading: tracks whether the data is still loading.
+  */
+  
   // This runs once when the component mounts
   useEffect(() => {
     // Fetch RSS data from the API
