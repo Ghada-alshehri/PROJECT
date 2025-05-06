@@ -15,8 +15,6 @@ This platform aims to make it easier for volunteers and organizations to connect
 -  **Contact Form**: Integrated with a PHP backend for inquiries.
 -  **Modern UI**: Responsive design using React components.
 -  **News API**: Displays some news about Volunteering.
-![image](https://github.com/user-attachments/assets/91d83740-27c3-4046-974b-455f8863c47a)
-
 
 ##  Technologies Used
 
@@ -56,11 +54,13 @@ On the **Homepage**, we showcased the **key features of our volunteering platfor
 We also integrated an **external API** to display the latest volunteering news, aiming to **encourage users to register and engage** by browsing relevant and inspiring content.
 
 <img width="948" alt="image" src="https://github.com/user-attachments/assets/003e5b32-3d4c-44ef-9578-89cbbdb434cc" />
+![image](https://github.com/user-attachments/assets/5f831074-8b6b-4074-a3d6-f957c36ae53a)
 
 
 2- Expolre Opertinituse Page
 After pressing **Browse Opportunities**, the user can view **all available opportunities**.
 We displayed real opportunities using styled cards, that contains some information about the Opportunitie such as title, Location, Duration, Skills Needed. Then pressing **View Details** or  **Search** or **Filter** for further search or contenu.
+![image](https://github.com/user-attachments/assets/f7818c4c-c5c5-4745-b4f0-92ac3338d7ff)
 
 3- Selected volunteering opportunity
 This page shows the details of a selected volunteering opportunity. It includes:
@@ -71,6 +71,7 @@ This page shows the details of a selected volunteering opportunity. It includes:
 - key info such as location, duration, and payment.
 -  “Volunteer Now” button for users to sign up.
  At the bottom, there’s an interactive map showing the exact location, helping users understand where they need to go.
+![image](https://github.com/user-attachments/assets/3ecfd7f9-6544-462e-b02f-0db1783b1ed9)
 
 4- Volunteer Application Form
 This page shows Form where users can apply for a selected opportunity. It includes:
@@ -79,6 +80,7 @@ This page shows Form where users can apply for a selected opportunity. It includ
 - A text area to enter relevant skills.
 - Two clear buttons at the bottom: Cancel and Submit Application, making the form easy to complete or exit.
 This form ensures we collect key applicant details and lets volunteers easily sign up for roles.
+![image](https://github.com/user-attachments/assets/f33a24c4-ab5e-459a-8f20-5240f1d04534)
 
 5- Profile Page
 This page shows the user’s profile with:
@@ -88,6 +90,9 @@ This page shows the user’s profile with:
 - Community Statistics showing completion rate, tasks completed, ongoing tasks, and hours volunteered.
 - A list of current volunteer activities with status and dates.
 This helps users track their progress and manage their volunteer work easily.
+
+![image](https://github.com/user-attachments/assets/cc3e47be-060e-412a-a1c7-d3d43e3cf670)
+![image](https://github.com/user-attachments/assets/532efb74-4ce2-4c4d-b451-bfaa23675682)
 
 
 
