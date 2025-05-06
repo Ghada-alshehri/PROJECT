@@ -117,10 +117,10 @@ We used state management (with useState) to track and update dynamic data like u
 ### 8 Routing and Navigation
 We implemented routing using React Router to smoothly navigate between pages like Home, Explore, Profile, and Login without reloading the whole app.
 
-### 9 API Integration (if applicable)
+### 9 API Integration 
  We integrated external APIs (via `fetch` or `axios`) to have smooth login & signup, Interactive Map, and News.
 
-### 10 Accessibility (A11y)
+### 10 Accessibility 
 We ensured accessibility by using descriptive `alt` text, proper heading levels, sufficient color contrast, keyboard-friendly navigation, and semantic roles where appropriate.
 
 ### 11 Deployment
