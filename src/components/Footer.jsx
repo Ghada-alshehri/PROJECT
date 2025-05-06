@@ -8,6 +8,7 @@ function Footer() {
 useState
 We used the useState hook to manage the state of showing or hiding the Contact Us modal.
 On submit, the message is sent using fetch as a POST request to a backend PHP file (submit_contact.php).
+Props--> None
 */
   
   // Toggle modal when user clicks "Contact Us" or close button
