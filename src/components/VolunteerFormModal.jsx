@@ -2,6 +2,16 @@ import React from "react";
 
 // VolunteerFormModal displays a form for users to apply to a volunteering opportunity
 function VolunteerFormModal({ formData, onChange, onSubmit, onClose, success }) {
+  /*
+Props used:
+- formData: the current form input values (comes from parent state).
+- onChange: function from parent to handle changes in input fields.
+- onSubmit: function from parent to handle form submission.
+- onClose: function to close the modal (when clicking outside or cancel).
+- success: boolean flag indicating if the submission was successful.
+State--> None.
+  */
+  
   return (
     // Outer modal container (clicking outside will close the modal)
     <div className="modal active" onClick={(e) => e.target.classList.contains("modal") && onClose()}>
