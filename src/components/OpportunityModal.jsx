@@ -2,6 +2,16 @@ import React from "react";
 
 // Modal component to show full details of a volunteering opportunity
 function OpportunityModal({ opportunity, onClose, onVolunteer, children }) {
+
+  /* 
+Props:
+- opportunity: passed from the parent to display details (title, description, skills, requirements, location, duration, payment, coordinates).
+- onClose: a callback function to close the modal (used on the close button and the background click).
+- onVolunteer: a callback when the user clicks the Volunteer Now button.
+- children: optional React children, though not directly used here.
+State--> None 
+  */
+  
   return (
     // Outer modal container (clicking outside the modal-content will close the modal)
     <div
