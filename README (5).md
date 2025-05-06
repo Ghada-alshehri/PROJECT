@@ -15,6 +15,7 @@ This platform aims to make it easier for volunteers and organizations to connect
 -  **Contact Form**: Integrated with a PHP backend for inquiries.
 -  **Modern UI**: Responsive design using React components.
 -  **News API**: Displays some news about Volunteering.
+![image](https://github.com/user-attachments/assets/91d83740-27c3-4046-974b-455f8863c47a)
 
 
 ##  Technologies Used
