@@ -7,11 +7,18 @@ function Home() {
   // Hook to programmatically navigate between routes
   const navigate = useNavigate();
 
+
   // Handler for "Browse Opportunities" button click
   const handleBrowseClick = () => {
     navigate("/explore");
   };
-
+/* State:
+It does not use its own useState. It only uses:
+useNavigate (from React Router) → to navigate to the Explore page when the user clicks Browse Opportunities.
+Props:
+It component does not receive props directly,
+but it renders the child component: <NewsSection /> → which handles its own props and state internally.
+*/
   return (
     <section id="home" className="section active">
       {/* Banner section */}
