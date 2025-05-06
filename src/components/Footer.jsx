@@ -4,7 +4,12 @@ import React, { useState } from 'react';
 function Footer() {
   // State to control the modal visibility (open/close)
   const [showModal, setShowModal] = useState(false);
-
+/*
+useState
+We used the useState hook to manage the state of showing or hiding the Contact Us modal.
+On submit, the message is sent using fetch as a POST request to a backend PHP file (submit_contact.php).
+*/
+  
   // Toggle modal when user clicks "Contact Us" or close button
   const handleModalToggle = () => {
     setShowModal(!showModal);
